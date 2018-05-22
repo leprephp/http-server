@@ -1,5 +1,5 @@
 {
-  "name": "lepre/http",
+  "name": "lepre/http-server",
   "description": "An implementation of PSR-15 HTTP Server Request Handlers",
   "type": "library",
   "license": "MIT",
