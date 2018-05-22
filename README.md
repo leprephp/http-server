@@ -1,6 +1,6 @@
 **🚧 This project is in early development stage and it could change significantly in the future.**
 
-# Lepre HTTP Server
+# Lepre HTTP Server [![Build Status](https://travis-ci.org/leprephp/http-server.svg?branch=master)](https://travis-ci.org/leprephp/http-server)
 
 An implementation of [PSR-15 HTTP Server Request Handlers](https://www.php-fig.org/psr/psr-15/).
 
