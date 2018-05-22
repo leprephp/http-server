@@ -1,0 +1,37 @@
+{
+  "name": "lepre/http",
+  "description": "An implementation of PSR-15 HTTP Server Request Handlers",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniele De Nobili",
+      "email": "danieledenobili@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "psr/container": "^1.0",
+    "psr/http-message": "^1.0",
+    "psr/http-server-middleware": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.4 || ^7.0",
+    "zendframework/zend-diactoros": "^1.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lepre\\Http\\Server\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lepre\\Http\\Server\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": [
+      "phpunit"
+    ]
+  }
+}
