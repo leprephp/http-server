@@ -25,7 +25,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 
-class ServerTest extends TestCase
+final class ServerTest extends TestCase
 {
     public function testMiddleware()
     {

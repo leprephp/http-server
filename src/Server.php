@@ -24,7 +24,7 @@ use Psr\Http\Server\RequestHandlerInterface;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-class Server implements RequestHandlerInterface
+final class Server implements RequestHandlerInterface
 {
     /**
      * @var RequestHandlerInterface

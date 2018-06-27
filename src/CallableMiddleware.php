@@ -23,7 +23,7 @@ use Psr\Http\Server\RequestHandlerInterface;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-class CallableMiddleware implements MiddlewareInterface
+final class CallableMiddleware implements MiddlewareInterface
 {
     /**
      * @var callable

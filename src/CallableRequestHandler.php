@@ -22,7 +22,7 @@ use Psr\Http\Server\RequestHandlerInterface;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-class CallableRequestHandler implements RequestHandlerInterface
+final class CallableRequestHandler implements RequestHandlerInterface
 {
     /**
      * @var callable
