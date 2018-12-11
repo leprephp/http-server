@@ -129,6 +129,7 @@ final class Server implements RequestHandlerInterface
     }
 
     /**
+     * @param ServerRequestInterface $request
      * @return MiddlewareInterface[]
      */
     private function buildStack(ServerRequestInterface $request): array
