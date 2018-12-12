@@ -137,7 +137,7 @@ final class Server implements RequestHandlerInterface
         ksort($this->stack);
 
         $stack = [];
-        foreach ($this->stack as $priority => $mws) {
+        foreach ($this->stack as $mws) {
             foreach ($mws as $mw) {
                 /** @var callable $condition */
                 $condition = $mw[0];
