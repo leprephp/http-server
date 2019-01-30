@@ -209,6 +209,7 @@ final class ServerTest extends TestCase
     }
 
     /**
+     * @param string|int $order
      * @return \Closure
      */
     private function createClosureMiddlewareForTestOrderCall($order): \Closure
@@ -250,6 +251,7 @@ final class ServerTest extends TestCase
     }
 
     /**
+     * @param object $value
      * @return void
      */
     private function assertResponse($value)
