@@ -77,12 +77,11 @@ final class ServerTest extends TestCase
         $server->append('middleware name');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid middleware detected
-     */
     public function testInvalidMiddlewareThrowsException()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid middleware detected');
+
         $this->serverHandle(
             $this->createServer()->append('invalid middleware')
         );
@@ -240,12 +239,11 @@ final class ServerTest extends TestCase
         $this->assertResponse($this->serverHandle($server));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid final request handler detected
-     */
     public function testInvalidFinal()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid final request handler detected');
+
         $server = $this->createServer('invalid final');
         $this->serverHandle($server);
     }
