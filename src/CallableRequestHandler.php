@@ -27,7 +27,7 @@ final class CallableRequestHandler implements RequestHandlerInterface
     /**
      * @var callable
      */
-    protected $callable;
+    private $callable;
 
     /**
      * @param callable $callable

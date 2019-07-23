@@ -28,7 +28,7 @@ final class CallableMiddleware implements MiddlewareInterface
     /**
      * @var callable
      */
-    protected $callable;
+    private $callable;
 
     /**
      * @param callable $callable
