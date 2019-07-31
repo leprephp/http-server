@@ -191,6 +191,64 @@ final class ServerTest extends TestCase
                     $this->assertEquals('11,12,4,5,9,', $response->getHeaderLine('X-Middleware'));
                 }
             ],
+            'append on condition' => [
+                $request,
+                function (Server $server) {
+                    $server
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('1'),
+                            $this->getReturnTrueCallable(),
+                            10
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('2'),
+                            $this->getReturnFalseCallable(),
+                            10
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('3'),
+                            $this->getReturnTrueCallable(),
+                            1
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('4'),
+                            $this->getReturnFalseCallable(),
+                            1
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('5'),
+                            $this->getReturnTrueCallable()
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('6'),
+                            $this->getReturnFalseCallable()
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('7'),
+                            $this->getReturnTrueCallable(),
+                            -1
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('8'),
+                            $this->getReturnFalseCallable(),
+                            -1
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('9'),
+                            $this->getReturnTrueCallable(),
+                            -10
+                        )
+                        ->appendOnCondition(
+                            $this->createClosureMiddlewareForTestOrderCall('10'),
+                            $this->getReturnFalseCallable(),
+                            -10
+                        )
+                    ;
+                },
+                function (ResponseInterface $response) {
+                    $this->assertEquals('9,7,5,3,1,', $response->getHeaderLine('X-Middleware'));
+                }
+            ],
         ];
     }
 
@@ -327,5 +385,25 @@ final class ServerTest extends TestCase
         }
 
         return $server->handle($request);
+    }
+
+    /**
+     * @return callable
+     */
+    private function getReturnTrueCallable(): callable
+    {
+        return static function () {
+            return true;
+        };
+    }
+
+    /**
+     * @return callable
+     */
+    private function getReturnFalseCallable(): callable
+    {
+        return function () {
+            return false;
+        };
     }
 }
