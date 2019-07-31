@@ -60,7 +60,7 @@ final class Server implements RequestHandlerInterface
      * @param int                                $priority
      * @return Server
      */
-    public function append($middleware, $priority = 0): Server
+    public function append($middleware, int $priority = 0): Server
     {
         return $this->appendOnCondition(
             $middleware,
@@ -87,7 +87,7 @@ final class Server implements RequestHandlerInterface
      * @param int                                $priority
      * @return Server
      */
-    public function appendOnPath($middleware, string $path, $priority = 0): Server
+    public function appendOnPath($middleware, string $path, int $priority = 0): Server
     {
         return $this->appendOnCondition(
             $middleware,
@@ -107,7 +107,7 @@ final class Server implements RequestHandlerInterface
      * @param int                                $priority
      * @return $this
      */
-    public function appendOnCondition($middleware, callable $condition, $priority = 0): Server
+    public function appendOnCondition($middleware, callable $condition, int $priority = 0): Server
     {
         if (!is_array($middleware)) {
             $middleware = [$middleware];
