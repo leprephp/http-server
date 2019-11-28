@@ -17,7 +17,7 @@ $ composer require lepre/http-server
 
 ### Requirements
 
-This project works with PHP 7.1 or above.
+This project works with PHP 7.2 or above.
 
 ## License
 

@@ -25,13 +25,13 @@
         "issues": "https://github.com/leprephp/http-server/issues"
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "psr/container": "^1.0",
         "psr/http-message": "^1.0",
         "psr/http-server-middleware": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0 || ^8.0",
+        "phpunit/phpunit": "^8.0",
         "php-coveralls/php-coveralls": "^2.1",
         "zendframework/zend-diactoros": "^1.7"
     },
